@@ -1,0 +1,9 @@
+<% show_comment.each do |comment| %>
+  <%= comment.user.email %><br/>
+  <%= comment.content %><br/>
+  <small><%= time_ago_in_words(comment.created_at) %></small><br/>
+  <% if current_user.id == comment.user_id %>
+    <small><%= link_to 'Remove Comment', disaster_comment_path(comment.disaster, comment), method: :delete, data: {confirm: "Are you sure?"} %></small>
+  <% end %>
+<% end %>
+<small></small>

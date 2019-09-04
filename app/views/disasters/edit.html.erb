@@ -1,0 +1,11 @@
+<h2> Edit Disaster </h2>
+
+<%= form_for @disaster, url: disaster_path(@disaster), method: :put do |f| %>
+  <%= f.label :title %><br/>
+  <%= f.text_field :title, placeholder: "Type your title ..." %><br/>
+  <%= f.label :information %><br/>
+  <%= f.text_area :information, placeholder: "about your title ..." %><br/>
+  <%= f.label :Disaster_Category %><br/>
+  <%= f.collection_select :category_id, Category.all, :id, :title %><br/>
+  <%= f.submit %>
+<% end %>

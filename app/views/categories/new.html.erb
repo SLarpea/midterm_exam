@@ -1,0 +1,9 @@
+<h2> Create Category </h2>
+
+<%= form_for @category, url: categories_path(@category), method: :post do |f| %>
+  <%= f.label :title %><br/>
+  <%= f.text_field :title, placeholder: "type category..." %><br/>
+  <%= f.label :information %><br/>
+  <%= f.text_area :information, placeholder: "information about the category...", row: 5 %><br/>
+  <%= f.submit %>
+<% end %>

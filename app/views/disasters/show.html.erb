@@ -1,0 +1,14 @@
+<h2><%= @disaster.title %> | Info </h2>
+
+Title: <%= @disaster.title %><br/>
+Created Time: <%= time_ago_in_words(@disaster.created_at) %><br/>
+Information : <%= @disaster.information %>
+
+<hr>
+
+<h3> <%= pluralize(@disaster.comments.size, "comment") %></h3>
+
+<%= render "comments/show_comments", show_comment: @disaster.comments %>
+
+<%= render "comments/comment_form", disaster_comment: ([@disaster,@disaster.comments.build]) %>
+
